@@ -23,7 +23,7 @@ from tornado.websocket import WebSocketHandler
 
 
 import redis 
-redisClient = redis.StrictRedis(host="127.0.0.1",port=6379,db=0,decode_responses=True)
+redisClient = redis.StrictRedis(host=os.getenv('redisip'),port=6379,db=0,decode_responses=True)
 
 
 SECRET_KEY = token_urlsafe(32)
